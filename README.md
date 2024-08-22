@@ -12,3 +12,9 @@ The rest of the configurations (EC2 Instance calibration, Ubunut instance config
 Thank you to TupleSpectra for showing me how to execute this project!
 
 
+# Technical steps for DAG
+1. My first task makes sure to establish a proper connection with OpenWeather API. This is done by using my personal API key and city name within the link.
+2. For the second task, we extract the data from the API by using the same endpoint to pull our data in JSON format.
+3. For the third task, we perform our transformations on the data (Converting Kelving to Fahrenheit, concatenating time of records, etc.)
+4. We chain these tasks together and establish connection with our EC2 instance using a remote SSH connection and to our AWS account/S3 bucket using Access key/Secret Access key IDs.
+5. Run our DAG on Airflow, which will run the code and output the data to our S3 bucket.
